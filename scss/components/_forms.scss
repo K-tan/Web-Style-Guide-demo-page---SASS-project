@@ -1,0 +1,22 @@
+.form {
+  @media (min-width: 992px) {
+    @include flexy($dir: column);
+    margin-top: 10%;
+    .btn--default {
+      width: 90%;
+    }
+  }
+}
+
+.form__label--hidden {
+  display: none;
+}
+
+.form__input {
+  margin: auto;
+  padding: 10px;
+  width: 75%;
+  border: none;
+  border-bottom: 5px solid $primary-color;
+  margin-bottom: 20px;
+}

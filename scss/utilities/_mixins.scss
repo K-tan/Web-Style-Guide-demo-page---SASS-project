@@ -1,0 +1,84 @@
+//mixin for buttons
+@mixin button($bg_color: null) {
+  background-color: $bg_color;
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  height: 50px;
+  margin: 15px;
+  color: $white;
+  text-transform: uppercase;
+  margin: 15px auto;
+  text-align: center;
+  @include mq(large){
+    width: 15%;
+    margin: 1%;
+    align-self: center;
+  }
+}
+
+//mixin for grid
+@mixin grid-box($bg_color: null) {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px auto;
+  color: $grey;
+  padding: 15px;
+  background-color: $bg_color;
+  border: none;
+  text-align: left;
+  @include mq(large){
+    text-align: center;
+  }
+}
+
+//media queries
+@mixin mq($break) {
+  @if $break == "medium" {
+    @media(min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (min-width: $brkpoint-lg) {
+      @content;
+    }
+  }
+  @else {
+    @error "No Value could be retrieved for `#{$break}`."
+  }
+};
+
+//flexbox
+@mixin flexy(
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null,
+  $t-align: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
+
+//Adjacent sibling margins
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}
+
+//grid columns
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    &--#{$i} {
+     width: percentage($target / $context);
+    }
+  }
+}

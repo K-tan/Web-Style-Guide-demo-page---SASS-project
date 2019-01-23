@@ -1,0 +1,19 @@
+.img--logo {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  @media(min-width: 992px) {
+    margin-left: 25%;
+  }
+}
+
+.img--frame {
+  width: 400px;
+  border: 1px solid rgb(191, 188, 188);
+  padding: 3%;
+  margin-bottom: 5%;
+}
+
+
+.img--avatar {
+  margin: auto;
+}

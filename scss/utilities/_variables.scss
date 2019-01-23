@@ -1,0 +1,40 @@
+//Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet");
+
+//font variable
+$font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$grey:  #868686;
+
+$primary-color:  #00e6b8;
+$secondary-color: #46DAF4; //same color as default button
+
+//button colors:
+$emerald        : #5ece7f; //success button color
+$coral          : #e67478; //error button color
+$sunglo         : #ff784f; //warning button color
+$purple-majesty : #9279c3; //info button color
+$turquoise-blue : #029fba;
+
+
+//color map
+$ui-colors: (
+  default : $secondary-color,
+  success : $emerald,
+  error   : $coral,
+  warning : $sunglo,
+  info    : $purple-majesty
+);
+
+//grid
+$g-col-width      :80px;
+$g-gutter-width   :20px;
+$g-col-count      :12;
+$g-cont-max-w     :1400px;
+
+//breakpoints
+$brkpoint-md:  768px;
+$brkpoint-lg: 992px;

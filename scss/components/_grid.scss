@@ -1,0 +1,85 @@
+.container {
+  margin: auto;
+  text-align: center;
+  max-width: 768px;
+@include mq(large) {
+  @include flexy($dir: column);
+  max-width: 1400px;
+}
+}
+
+.grid__row {
+  margin: auto 20px;
+  padding: 10px;
+  @include mq(large){
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+.grid{
+  &__col--12.theme__colors{
+    @include grid-box($bg_color: darken($primary-color, 1%));
+}
+&__col--6.theme__colors{
+  @include grid-box($bg_color: lighten($turquoise-blue, 5%));
+}
+&__col--4.theme__colors{
+  @include grid-box($bg_color: $secondary-color);
+}
+&__col--3.theme__colors{
+  @include grid-box($bg_color: lighten($purple-majesty, 15%));
+}
+&__col--5.theme__colors{
+  @include grid-box($bg_color: lighten($emerald, 15%));
+}
+&__col--7.theme__colors{
+  @include grid-box($bg_color: lighten($coral, 10%));
+}
+&__col--8.theme__colors{
+  @include grid-box($bg_color: lighten($sunglo, 10%));
+}
+}
+
+//grid column CALCULATIONS
+
+.grid__col {
+@include mq(large) {
+  @include g-columns;
+  }
+}
+
+//COLUMN STYLES
+[class^="grid__col--"] {
+  @include mq(medium){
+    margin-top: em(12px);
+    margin-bottom: em(12px);
+  }
+  @include mq(large) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:last-of-type {
+
+    }
+  }
+}
+
+// .centered
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+// .theme__colors
+
+
+.theme__colors {
+    @include grid-box;
+
+    @include mq(large) {
+      text-align: center;
+    }
+}
